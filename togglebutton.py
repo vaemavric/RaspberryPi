@@ -19,7 +19,6 @@ def toggle(pinP, pinL):
 	while True:
 		input = GPIO.input(pinP)
 		if ((not prevInput) and input):
-			print "In"
 			if(state == True):
 				state = False 
 				GPIO.output(pinL, False)
