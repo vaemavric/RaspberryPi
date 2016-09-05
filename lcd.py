@@ -59,48 +59,7 @@ LCD_LINE_2 = 0xC0 # LCD RAM address for the 2nd line
 E_PULSE = 0.0005
 E_DELAY = 0.0005
 
-def main():
-  # Main program block
 
-  GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
-  GPIO.setup(LCD_E, GPIO.OUT)  # E
-  GPIO.setup(LCD_RS, GPIO.OUT) # RS
-  GPIO.setup(LCD_D4, GPIO.OUT) # DB4
-  GPIO.setup(LCD_D5, GPIO.OUT) # DB5
-  GPIO.setup(LCD_D6, GPIO.OUT) # DB6
-  GPIO.setup(LCD_D7, GPIO.OUT) # DB7
-
-
-  # Initialise display
-  lcd_init()
-
-  while True:
-
-    # Send some test
-    lcd_string("Rasbperry Pi",LCD_LINE_1)
-    lcd_string("16x2 LCD Test",LCD_LINE_2)
-
-    time.sleep(3) # 3 second delay
-
-    # Send some text
-    lcd_string("1234567890123456",LCD_LINE_1)
-    lcd_string("abcdefghijklmnop",LCD_LINE_2)
-
-
-
-    time.sleep(3) # 3 second delay
-
-    # Send some text
-    lcd_string("RaspberryPi-spy",LCD_LINE_1)
-    lcd_string(".co.uk",LCD_LINE_2)
-
-    time.sleep(3)
-
-    # Send some text
-    lcd_string("Follow me on",LCD_LINE_1)
-    lcd_string("Twitter @RPiSpy",LCD_LINE_2)
-
-    time.sleep(3)
 
 def lcd_init():
   # Initialise display
@@ -174,6 +133,49 @@ def lcd_string(message,line):
 
   for i in range(LCD_WIDTH):
     lcd_byte(ord(message[i]),LCD_CHR)
+	
+def main():
+  # Main program block
+
+  GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
+  GPIO.setup(LCD_E, GPIO.OUT)  # E
+  GPIO.setup(LCD_RS, GPIO.OUT) # RS
+  GPIO.setup(LCD_D4, GPIO.OUT) # DB4
+  GPIO.setup(LCD_D5, GPIO.OUT) # DB5
+  GPIO.setup(LCD_D6, GPIO.OUT) # DB6
+  GPIO.setup(LCD_D7, GPIO.OUT) # DB7
+
+
+  # Initialise display
+  lcd_init()
+
+  while True:
+
+    # Send some test
+    lcd_string("Rasbperry Pi",LCD_LINE_1)
+    lcd_string("16x2 LCD Test",LCD_LINE_2)
+
+    time.sleep(3) # 3 second delay
+
+    # Send some text
+    lcd_string("1234567890123456",LCD_LINE_1)
+    lcd_string("abcdefghijklmnop",LCD_LINE_2)
+
+
+
+    time.sleep(3) # 3 second delay
+
+    # Send some text
+    lcd_string("RaspberryPi-spy",LCD_LINE_1)
+    lcd_string(".co.uk",LCD_LINE_2)
+
+    time.sleep(3)
+
+    # Send some text
+    lcd_string("Follow me on",LCD_LINE_1)
+    lcd_string("Twitter @RPiSpy",LCD_LINE_2)
+
+    time.sleep(3)
 
 if __name__ == '__main__':
 
