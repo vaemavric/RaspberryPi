@@ -114,7 +114,7 @@ def lcd_byte(bits, mode):
   # mode = True  for character
   #        False for command
  
-  GPIO.output(LCD_RS, mode) # RS
+  GPIO.output(7, mode) # RS
  
   # High bits
   GPIO.output(LCD_D4, False)
