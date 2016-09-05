@@ -161,6 +161,4 @@ if __name__ == '__main__':
   except KeyboardInterrupt:
     pass
   finally:
-    lcd_byte(0x01, False)
-    lcd_string("Goodbye!",0x80)
     GPIO.cleanup()
