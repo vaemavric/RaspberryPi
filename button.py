@@ -10,6 +10,6 @@ try:
   if((not prev_input) and (input)):
    print("Button Pressed")
   prev_input = input
-  time.sleep(0.05)
+  time.sleep(0.5)
 except KeyboardInterrupt:
  GPIO.cleanup()
